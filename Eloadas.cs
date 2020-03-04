@@ -67,7 +67,11 @@ namespace EloadasProject
         }
 
         public bool Foglalt(int sorSzam, int helySzam) {
-            if (foglalasok[sorSzam, helySzam] == true) {
+            if (sorSzam < 1 || helySzam < 1)
+            {
+                throw new ArgumentException("A számoknak pozitívnak kell, hogy lenniük.");
+            }
+            else if (foglalasok[sorSzam, helySzam] == true) {
                 return false;
             }
             return true;
