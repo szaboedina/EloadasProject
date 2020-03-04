@@ -37,10 +37,26 @@ namespace EloadasProject.Tests
         {
             Assert.IsTrue(e.Lefoglal());
         }
+        [TestCase]
+        public void Foglalas2() {
+            e.Lefoglal();
+            Assert.AreEqual(20, e.SzabadHelyek());
+
+        }
 
         [TestCase]
         public void FoglaltHely() {
-            Assert.IsTrue(e.Foglalt(1, 1));
+            e.Lefoglal();
+            Assert.AreEqual(false,e.Foglalt(3, 4));
+        }
+        [TestCase]
+        public void MindLefoglal() {
+            for (int i = 0; i < 3*7; i++)
+            {
+                e.Lefoglal();
+                
+            }
+            Assert.AreEqual(true,e.Teli());
         }
     }
 }

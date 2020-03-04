@@ -15,8 +15,14 @@ namespace EloadasProject
             }
             
             this.foglalasok = new bool[sorokSzama,helyekSzama];
+            for (int i = 0 ; i < sorokSzama; i++)
+            {
+                for (int j = 0 ; j < helyekSzama; j++)
+                {
+                    foglalasok[i,j] = false;
+                }
+            }
 
-            
 
         }
         public bool Lefoglal() {
